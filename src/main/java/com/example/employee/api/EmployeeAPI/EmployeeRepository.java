@@ -8,5 +8,8 @@ import java.util.List;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
-    List<Employee> findByFirstNameContaining(String firstName);
+    List<Employee> findByNameStartingWithIgnoreCase(String firstName);
+
+    boolean existsByEmail(String email);
+
 }
